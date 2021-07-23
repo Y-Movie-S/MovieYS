@@ -1,4 +1,7 @@
+
 const serverUrl = "https://shell-booming-guanaco.glitch.me/movies";
+
+const dbURL = 'https://api.themoviedb.org/3/movie/550?api_key=73b5e9519e62e792b9bae13f682f8a54';
 
 // fetch(serverUrl)
 // .then(res => res.json())
@@ -41,8 +44,9 @@ function Ajax(url,method = "GET", data) {
 // Ajax(serverUrl + "/3" )
 // .then(data => console.log(data))
 
-Ajax(serverUrl + "/9", method ="PUT", {
-    name: "Polaris",
-        message: "weekend"
-})
-.then(data => console.log(data))
+
+// Ajax(dbURL, method, {
+//
+// })
+//     .then(data => console.log(data))
+
