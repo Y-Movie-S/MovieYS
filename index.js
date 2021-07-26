@@ -63,7 +63,7 @@ $(document).ready(function() {
     }
     let searchTerm = document.getElementById('search')
     let url = `https://api.themoviedb.org/3/search/multi?api_key=73b5e9519e62e792b9bae13f682f8a54`
-
+// loading
 
 // searches when the button is clicked
     $('#button').click(function() {
@@ -76,3 +76,8 @@ $(document).ready(function() {
 
 })
 
+//  update / delete / post single movie request
+//loading message
+//form inputs - name rating description
+//event listener for form
+// create movie function- add/edit *use prevent default* to avoid page reload
