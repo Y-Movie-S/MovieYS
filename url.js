@@ -49,4 +49,3 @@ function Ajax(url,method = "GET", data) {
 //
 // })
 //     .then(data => console.log(data))
-
