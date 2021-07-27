@@ -8,8 +8,9 @@ $(document).ready(function() {
             console.log(movies)
             movies.map(function (movie, i){
                 $('#card-1').append(
-                `<div className="card" style="width: 18rem;" id="data-${movie.id}">
-                    <img className="card-img-top" src="${movie.poster}" alt="Card image cap" style="height: 250px; width: auto">
+                `<div className="card" class="hidden-image" style="width: 18rem;" id="data-${movie.id}">
+                    <img className="card-img-top"  src="${movie.poster}" alt="Card image cap" style="height: 350px; width: auto">
+                    <div class="pre-hidden hide-me">
                         <div className="card-body">
                             <h5 className="card-title">${movie.title}</h5>
                             <p className="card-text" font-family="cursive">${movie.plot}</p>
@@ -19,6 +20,7 @@ $(document).ready(function() {
                             <li className="list-group-item">${movie.score} / 10</li>
                         </ul>
                         <button type="button" class="edit-b" data-value="${movie.id}">edit</button>
+                    </div>
                 </div>`)
             })
             addEventListeners()
@@ -158,6 +160,15 @@ function addEventListeners() {
             });
         });
     });
+    $(".hidden-image").hover(
+        function (){
+        $(this).children('img').addClass("hide");
+        $(this).children('.hide-me').removeClass('pre-hidden');
+    },
+        function (){
+            $(this).children('img').removeClass("hide");
+            $(this).children('.hide-me').addClass('pre-hidden');
+        })
 
 }
 

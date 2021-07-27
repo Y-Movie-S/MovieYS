@@ -11,16 +11,19 @@
     <script src="js/index.js"></script>
 </head>
 <body>
-<div class="Header">
-    <h1 id="H1">Movie App</h1>
-        <div class="potential-icon">
-            <img src="./images/pic.png" alt="searchfor">
-        </div>
-</div>
+<nav class="navbar navbar-light justify-content-between" id="navbar">
+    <a class="navbar-brand" id="nav-title">Movie App</a>
+    <img src="./images/pic.png" alt="searchfor" id="nav-img">
+    <div id="search-holder">
+        <form class="form-inline" id="nav-search">
+            <input type="text" placeholder="Search for a Movie" id="search">
+            <button type="button" id="button"><img src="images/outline_search_black_24dp.png" style="height: 25px"></button>
+        </form>
+    </div>
+</nav>
 <div class="search-bar bg-dark" id="search-area">
     <div class="container-">
-        <input type="text" placeholder="Search for a Movie" id="search">
-        <button type="button" id="button">Submit</button>
+        .
     </div>
 </div>
 <div class="card-body py-5 bg-light">
