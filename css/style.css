@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+body {
+    background-color: gray;
+}
+.potential-icon {
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+footer {
+    background-color: #f2f2f2;
+    padding:25px;
+}
+.row {
+    display: flex;
+    flex-wrap:  wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+.py-5 {
+padding-bottom: 3rem;
+    padding-top: 3rem;
+}
+
+.card-body {
+    display: flex;
+    max-height: 380px;
+    align-content: center;
+}
+
+H1 {
+    font-family: cursive;
+}

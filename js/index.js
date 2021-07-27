@@ -12,7 +12,7 @@ $(document).ready(function() {
                     <img className="card-img-top" src="${movie.poster}" alt="Card image cap" style="height: 250px; width: auto">
                         <div className="card-body">
                             <h5 className="card-title">${movie.title}</h5>
-                            <p className="card-text">${movie.plot}</p>
+                            <p className="card-text" font-family="cursive">${movie.plot}</p>
                         </div>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">${movie.year}</li>
@@ -24,7 +24,6 @@ $(document).ready(function() {
             addEventListeners()
         });
     });
-
     function Ajax(url, method = "GET", data) {
         const options = {
             method: method,
@@ -71,12 +70,8 @@ $(document).ready(function() {
                 }).then(function (data) {
                     // comment this out if you want to see the object
                     window.location.reload();
-
                 })
-
                 }
-
-
             )
             .catch(err => {
                 console.error(err);
@@ -85,7 +80,13 @@ $(document).ready(function() {
     let searchTerm = document.getElementById('search')
     let url = `https://api.themoviedb.org/3/search/multi?api_key=73b5e9519e62e792b9bae13f682f8a54`
 // loading
+// links js to css so we can add functionality to our functions through bootstrap
+    var link = document.createElement('link');
 
+    link.rel = 'stylesheet';
+    link.type = 'css';
+    link.href = './css/style.css';
+    document.getElementsByTagName('HEAD')[0].appendChild(link);
 // searches when the button is clicked
     $('#button').click(function() {
         let term = querySpaces(searchTerm.value)
@@ -94,8 +95,6 @@ $(document).ready(function() {
         // window.location.reload();
 
     });
-
-
 
 function addEventListeners() {
     function Ajax(url, method = "GET", data) {
