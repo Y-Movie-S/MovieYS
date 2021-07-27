@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 body {
     background-color: gray;
 }
@@ -20,25 +20,20 @@ footer {
     background-color: #f2f2f2;
     padding:25px;
 }
-.row {
-    display: flex;
-    flex-wrap:  wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
 
-.bg-light {
-    background-color: #f8f9fa;
-}
+
+
 .py-5 {
 padding-bottom: 3rem;
     padding-top: 3rem;
 }
 
 .card-body {
-    display: flex;
     max-height: 380px;
     align-content: center;
+}
+#search-area {
+    background-color: black;
 }
 
 a {
@@ -61,6 +56,7 @@ a {
 }
 #nav-img {
     height: 125px;
+    padding-left: 80px;
 }
 #nav-search{
     margin-right: 0;
@@ -71,7 +67,7 @@ a {
 
 #search{
     background-color: #313942;
-    color: #ccd9e5  ;
+    color: #FFF  ;
 }
 
 form {
@@ -106,4 +102,61 @@ input:focus {
 }
 ::placeholder {
     color: #74828f;
+}
+html {
+    background-color: #22272d;
+}
+.background-2 {
+    background-color: #22272d;
+}
+
+#please-change {
+    background-color: #22272d;
+}
+
+.movie {
+    margin-right: .5em;
+    margin-left: .5em;
+    margin-bottom: 2em;
+}
+
+h1{
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
+    padding-left: 10px;
+}
+.white-text {
+    color: #ccd9e5;
+}
+.plot{
+    font-size: 11px;
+}
+.edit-b {
+    border:0px solid blue;
+    background: #22272d;
+    color:white;
+    height: 10px;
+}
+.edit-img {
+    height: 10px;
+}
+
+textarea {
+    background-color: #313942;
+}
+
+.delete-b {
+    border:0px solid blue;
+    background: #22272c;
+    color:white;
+}
+
+.cards {
+    margin-left: auto;
+}
+
+.submit-b {
+    border:0px solid blue;
+    background: #22272c;
+    color:white;
 }

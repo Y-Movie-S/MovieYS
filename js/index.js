@@ -2,24 +2,31 @@
 $(document).ready(function() {
     const serverUrl = "https://shell-booming-guanaco.glitch.me/movies";
     const glitch = fetch(serverUrl).then(movies => movies.json())
+    function year(str){
+        let year = str.split("-")
+        return year[0]
+    }
 
     fetch(serverUrl).then(response => {
         response.json().then(movies => {
             console.log(movies)
             movies.map(function (movie, i){
+                let newYear = year(movie.year)
                 $('#card-1').append(
-                `<div className="card" class="hidden-image" style="width: 18rem;" id="data-${movie.id}">
-                    <img className="card-img-top"  src="${movie.poster}" alt="Card image cap" style="height: 350px; width: auto">
+                `<div className="card" class="hidden-image movie" style="width: 18rem;" id="data-${movie.id}">
+                    <img className="card-img-top" id="img-${movie.id}"  src="${movie.poster}" alt="Card image cap" style="height: 350px; width: auto">
                     <div class="pre-hidden hide-me">
                         <div className="card-body">
-                            <h5 className="card-title">${movie.title}</h5>
-                            <p className="card-text" font-family="cursive">${movie.plot}</p>
+                            <h4 className="card-title" class="white-text">${movie.title}</h4>
+                            <h6 class="white-text">${newYear}</h6>
+                            <p className="card-text" font-family="cursive" class="white-text plot">${movie.plot}</p>
                         </div>
                         <ul className="list-group list-group-flush">
-                            <li className="list-group-item">${movie.year}</li>
-                            <li className="list-group-item">${movie.score} / 10</li>
                         </ul>
-                        <button type="button" class="edit-b" data-value="${movie.id}">edit</button>
+                        <div class="d-flex justify-content-between white-text">
+                            <button type="button" class="edit-b" data-value="${movie.id}"><img src="images/white-24dp/1x/outline_edit_white_24dp.png" alt=""></button>
+                            <h6>${movie.score} / 10</h6>
+                        </div>
                     </div>
                 </div>`)
             })
@@ -40,7 +47,7 @@ $(document).ready(function() {
             .catch(err => err)
     }
     //
-    // Ajax(serverUrl, "POST", {director: "HI"})
+    // Ajax(serverUrl + "/20", "DELETE", {director: "HI"})
     //     .then(function (data) {
     //         console.log(data)
     //     })
@@ -117,20 +124,18 @@ function addEventListeners() {
         $(`#data-${movieId}`).html("")
             fetch("https://shell-booming-guanaco.glitch.me/movies" + `/${movieId}`).then(response => {
             response.json().then(movie => {
+                let onlyYear = year(movie.year)
                     $(`#data-${movieId}`).append(
-                        `<div className="card" style="width: 18rem;" id="data-${movie.id}">
-                    <img className="card-img-top" src="${movie.poster}" alt="Card image cap" style="height: 250px; width: auto">
+                        `<div className="card" class="cards" id="data-${movie.id}">
+                    <img className="card-img-top" src="${movie.poster}" id="img-${movie.id}" alt="Card image cap" style="height: 250px; width: auto; padding-left: 100px">
                         <div className="card-body">
-                            <h5 className="card-title"><textarea id="title-edit">${movie.title}</textarea></h5>
-                            <p className="card-text"><textarea rows="5" cols="30" id="plot-edit">${movie.plot}</textarea></p>
+                            <h5 className="card-title"><textarea id="title-edit" class="white-text" >${movie.title}</textarea></h5>
+                            <textarea id="year-edit" class="white-text" cols="30">${onlyYear}</textarea>
+                            <p className="card-text"><textarea rows="5" cols="30" id="plot-edit" class="white-text">${movie.plot}</textarea></p>
+                            <textarea id="score-edit" cols="30" class="white-text">${movie.score}</textarea>
                         </div>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item"><textarea id="year-edit">${movie.year}</textarea></li>
-                            <li className="list-group-item"><textarea id="score-edit">${movie.score}</textarea></li>
-                            
-                        </ul>
-                        <button type="button" class="submit-b" data-value="${movie.id}">submit</button>
-                        <button type="button" class="delete-b" data-value="${movieId}">delete</button>
+                        <button type="button" class="submit-b" data-value="${movie.id}"><img src="images/black-24/1x/outline_check_white_24dp.png" alt=""></button>
+                        <button type="button" class="delete-b" data-value="${movieId}"><img src="images/black-24/1x/outline_delete_white_24dp.png" alt=""></button>
                 </div>`)
                 $('.submit-b').click(function (){
                     let newYear = $('#year-edit').val()
@@ -157,6 +162,7 @@ function addEventListeners() {
 
                         })
                 })
+                $("#img-" + movieId).addClass("hide");
             });
         });
     });
