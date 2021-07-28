@@ -2,36 +2,7 @@
 body {
     background-color: gray;
 }
-.potential-icon {
-    background-color: lightgray;
-    display: flex;
-    justify-content: center;
-}
 
-.search-bar {
-    text-align: left;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 0;
-    border-radius: 0;
-}
-
-footer {
-    background-color: #f2f2f2;
-    padding:25px;
-}
-
-
-
-.py-5 {
-padding-bottom: 3rem;
-    padding-top: 3rem;
-}
-
-.card-body {
-    max-height: 380px;
-    align-content: center;
-}
 #search-area {
     background-color: black;
 }
@@ -124,6 +95,8 @@ h1{
     font-family: 'Noto Sans KR', sans-serif;
     color: white;
     padding-left: 10px;
+    padding-top: 8px;
+    margin: 0;
 }
 .white-text {
     color: #ccd9e5;
@@ -155,6 +128,11 @@ textarea {
     margin-left: auto;
 }
 
+.delete-b {
+    border:0px solid blue;
+    background: #22272c;
+    color:white;
+}
 .submit-b {
     border:0px solid blue;
     background: #22272c;
