@@ -47,7 +47,7 @@ $(document).ready(function() {
             .catch(err => err)
     }
     //
-    // Ajax(serverUrl + "/20", "DELETE", {director: "HI"})
+    // Ajax(serverUrl + "/30", "DELETE", {director: "HI"})
     //     .then(function (data) {
     //         console.log(data)
     //     })
@@ -87,7 +87,7 @@ $(document).ready(function() {
             });
     }
     let searchTerm = document.getElementById('search')
-    let url = `https://api.themoviedb.org/3/search/multi?api_key=73b5e9519e62e792b9bae13f682f8a54`
+    let url = `https://api.themoviedb.org/3/search/movie?api_key=73b5e9519e62e792b9bae13f682f8a54`
 // loading
 // links js to css so we can add functionality to our functions through bootstrap
     var link = document.createElement('link');
