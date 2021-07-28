@@ -94,12 +94,6 @@ $(document).ready(function() {
     let url = `https://api.themoviedb.org/3/search/multi?api_key=73b5e9519e62e792b9bae13f682f8a54`
 // loading
 // links js to css so we can add functionality to our functions through bootstrap
-    var link = document.createElement('link');
-
-    link.rel = 'stylesheet';
-    link.type = 'css';
-    link.href = './css/style.css';
-    document.getElementsByTagName('HEAD')[0].appendChild(link);
 // searches when the button is clicked
     $('#button').click(function() {
         let term = querySpaces(searchTerm.value)
@@ -144,14 +138,11 @@ function addEventListeners() {
                 $('.submit-b').click(function (){
                     let newYear = $('#year-edit').val()
                     let newPlot = $('#plot-edit').val()
-                    let newDirector = $('#director-edit').val()
                     let newScore = $('#score-edit').val()
-                    let newGenre = $('#genre-edit').val()
                     let newTitle = $('#title-edit').val()
                     Ajax("https://shell-booming-guanaco.glitch.me/movies" + `/${movieId}`, "PATCH", {
                         year: newYear,
                         plot: newPlot,
-                        director: newDirector,
                         score: newScore,
                         title: newTitle
                     }).then(function(){
