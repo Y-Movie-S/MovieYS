@@ -64,6 +64,10 @@ $(document).ready(function() {
             .then(res => res.json())
             .then(function(response){
                 console.log(response)
+                if(response.results[0].media_type === "tv"){
+                    response.results[0].title = response.results[0].name
+                    response.results[0].release_date = response.results[0].first_air_date
+                }
                 let newYear = response.results[0].release_date;
                 let newPlot = response.results[0].overview;
                 let newTitle = response.results[0].title;
@@ -87,7 +91,7 @@ $(document).ready(function() {
             });
     }
     let searchTerm = document.getElementById('search')
-    let url = `https://api.themoviedb.org/3/search/movie?api_key=73b5e9519e62e792b9bae13f682f8a54`
+    let url = `https://api.themoviedb.org/3/search/multi?api_key=73b5e9519e62e792b9bae13f682f8a54`
 // loading
 // links js to css so we can add functionality to our functions through bootstrap
     var link = document.createElement('link');
